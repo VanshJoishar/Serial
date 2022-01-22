@@ -8,6 +8,6 @@ def generate_nonce():
     print (serial)
     return serial
 
-@app.route("/", methods=["GET"])
+@app.route("/", methods=["POST"])
 def index():
     return jsonify(serial = int(generate_nonce()))
