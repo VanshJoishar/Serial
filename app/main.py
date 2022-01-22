@@ -10,7 +10,7 @@ def generate_nonce():
 
 def home():
     if request.method=='POST':
-        return jsonify(message = "Welcome to eth signin, please sign this message to confirm.", nonce = int(generate_nonce()))
+        return jsonify(message = "Welcome to eth signin, please sign this message to confirm.")
 
 @app.route("/",  methods=["GET"])
 def index():
