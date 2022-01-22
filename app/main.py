@@ -8,10 +8,11 @@ def generate_nonce():
     print (serial)
     return serial
 
+@app.route("/",  methods=["GET",'POST'])
 def post():
     if request.method=='POST':
         return jsonify(message = "Welcome to eth signin, please sign this message to confirm.")
 
-@app.route("/",  methods=["GET"])
+
 def index():
     return jsonify(message = "Welcome to eth signin, please sign this message to confirm.", nonce = int(generate_nonce()))
