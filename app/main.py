@@ -8,7 +8,7 @@ def generate_nonce():
     print (serial)
     return serial
 
-@app.route("/",  methods=["GET",'POST'])
+@app.route("/",  methods=['GET','POST'])
 def post():
     if request.method=='POST':
         return jsonify(message = "Welcome to eth signin, please sign this message to confirm.")
