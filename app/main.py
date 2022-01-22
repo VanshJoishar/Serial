@@ -8,7 +8,7 @@ def generate_nonce():
     print (serial)
     return serial
 
-def home():
+def post():
     if request.method=='POST':
         return jsonify(message = "Welcome to eth signin, please sign this message to confirm.")
 
