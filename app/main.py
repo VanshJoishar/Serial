@@ -16,7 +16,7 @@ def generate_nonce():
 @app.route('/login',methods = ['POST', 'GET'])
 def login():
    if request.method == 'POST':
-      user = request.form['nm']
+      user = request.form['nonce']
       return redirect(url_for('success',name = user))
    else:
       user = request.args.get('nm')
