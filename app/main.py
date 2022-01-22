@@ -13,6 +13,6 @@ def post():
     if request.method=='POST':
         return jsonify(message = "Welcome to eth signin, please sign this message to confirm.", nonce = int(generate_nonce()))
 
-@app.route("/",  methods=['GET'])
+@app.route("/nonce",  methods=['GET'])
 def index():
     return jsonify(nonce = int(generate_nonce()))
