@@ -15,4 +15,4 @@ def post():
 
 
 def index():
-    return jsonify(message = "Welcome to eth signin, please sign this message to confirm.", nonce = int(generate_nonce()))
+    return jsonify(nonce = int(generate_nonce()))
