@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, redirect, url_for
 import os
 
 app = Flask(__name__)
@@ -12,6 +12,15 @@ def generate_nonce():
 #def post():
 #    if request.method=='POST':
 #        return jsonify(message = "Welcome to eth signin, please sign this message to confirm.", nonce = int(generate_nonce()))
+
+@app.route('/login',methods = ['POST', 'GET'])
+def login():
+   if request.method == 'POST':
+      user = request.form['nm']
+      return redirect(url_for('success',name = user))
+   else:
+      user = request.args.get('nm')
+      return redirect(url_for('success',name = user))
 
 @app.route("/",  methods=['GET'])
 def index():
