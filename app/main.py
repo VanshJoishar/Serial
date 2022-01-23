@@ -13,7 +13,7 @@ def generate_nonce():
 #    if request.method=='POST':
 #        return jsonify(message = "Welcome to eth signin, please sign this message to confirm.", nonce = int(generate_nonce()))
 
-@app.route('/login',methods = ['POST', 'GET'])
+@app.route('/nonce',methods = ['POST', 'GET'])
 def login():
    if request.method == 'POST':
       user = request.form['nonce']
