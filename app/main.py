@@ -17,7 +17,8 @@ def generate_nonce():
 def login():
    if request.method == 'POST':
       user = request.form['nonce']
-      return redirect(url_for('success',name = user))
+      return jsonify(message = "Welcome to eth signin, please sign this message to confirm.", nonce = int(generate_nonce()))
+      
    else:
       user = request.args.get('nm')
       return redirect(url_for('success',name = user))
